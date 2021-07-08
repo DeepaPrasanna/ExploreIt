@@ -1,8 +1,9 @@
 import axios from "axios";
+import { UNSPLASH_URL, UNSPLASH_API_KEY } from "../constants/constants";
 
 export default axios.create({
-  baseURL: "https://api.unsplash.com",
+  baseURL: UNSPLASH_URL,
   headers: {
-    Authorization: "Client-ID BcFH673Etlx--mxdrFemwPerbbOgd91scp8_DVgtH4k",
-  }
+    Authorization: `Client-ID ${UNSPLASH_API_KEY}`,
+  },
 });
