@@ -1,0 +1,6 @@
+/* media queries */
+@media only screen and (max-width: 426px) {
+  .search-box-buttons {
+    margin-top: 10px !important;
+  }
+}

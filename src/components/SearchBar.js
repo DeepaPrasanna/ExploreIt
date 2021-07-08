@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/SearchBar.css";
 
 const SearchBar = (props) => {
   const [term, setTerm] = useState("");
@@ -10,7 +11,7 @@ const SearchBar = (props) => {
   };
 
   return (
-    <div className="ui segment">
+    <div className="ui segment ">
       <form className="ui form" onSubmit={onFormSubmit}>
         <div className="ui three fields">
           <label> Search here:</label>
@@ -20,16 +21,17 @@ const SearchBar = (props) => {
             onChange={(e) => setTerm(e.target.value)}
           ></input>
           <button
-            className="ui button"
+            className="ui grey button search-box-buttons"
             data-searchtype="images"
             onClick={(e) =>
               setSearchType(e.target.getAttribute("data-searchtype"))
             }
+            style={{ marginLeft: "5px" }}
           >
-            Images
+            <div className="visible content">Images</div>
           </button>
           <button
-            className="ui button"
+            className="ui red button search-box-buttons"
             data-searchtype="videos"
             onClick={(e) =>
               setSearchType(e.target.getAttribute("data-searchtype"))
