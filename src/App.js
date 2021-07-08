@@ -43,7 +43,10 @@ const App = () => {
     content = <VideoDisplay videos={videos} />;
   }
   return (
-    <div className="ui container" style={{ marginTop: "10px" }}>
+    <div
+      className="ui container explore-container"
+      style={{ paddingTop: "10px" }}
+    >
       <SearchBar onSubmit={onTermSubmit} />
       {content}
     </div>
