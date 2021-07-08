@@ -10,7 +10,6 @@ const ImageCard = (props) => {
 
   const setSnaps = () => {
     const height = myRef.current.clientHeight;
-    // console.log(myRScreenshot from 2021-02-02 21-40-56
     const spans = Math.ceil(height / 20);
     setSpans(spans);
   };
