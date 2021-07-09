@@ -28,7 +28,7 @@ const SearchBar = (props) => {
             }
             style={{ marginLeft: "5px" }}
           >
-            <div className="visible content">Images</div>
+            Images
           </button>
           <button
             className="ui red button search-box-buttons"
