@@ -4,3 +4,7 @@
     margin-top: 10px !important;
   }
 }
+
+.search-container {
+  box-shadow: 2px 2px 5px grey !important;
+}

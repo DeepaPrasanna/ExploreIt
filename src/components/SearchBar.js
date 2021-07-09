@@ -11,7 +11,7 @@ const SearchBar = (props) => {
   };
 
   return (
-    <div className="ui segment ">
+    <div className="ui segment search-container">
       <form className="ui form" onSubmit={onFormSubmit}>
         <div className="ui three fields">
           <label> Search here:</label>
