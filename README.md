@@ -1,3 +1,3 @@
 # ExploreIt
 
-Explore Images from UnSplash and videos from youtube
+Search Unsplash images and play youtube videos easily!
