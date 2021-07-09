@@ -5,11 +5,13 @@ import SearchBar from "./components/SearchBar";
 import ImageList from "./components/ImageList";
 import VideoDisplay from "./components/VideoDisplay";
 import ErrMsg from "./components/ErrMsg";
+import Loader from "./components/Loader";
 
 const App = () => {
   const [images, setImages] = useState([]);
   const [searchType, setSearchType] = useState("");
   const [videos, setVideos] = useState([]);
+  const [showErrMsg, setShowErrMsg] = useState(false);
 
   const onTermSubmit = async (term, searchType) => {
     setSearchType(searchType);
@@ -19,7 +21,13 @@ const App = () => {
           query: term,
         },
       });
-      setImages(response.data.results);
+
+      if (response.data.results.length) {
+        setImages(response.data.results);
+        setShowErrMsg(false);
+      } else {
+        setShowErrMsg(true);
+      }
     }
     if (searchType === "videos") {
       const response = await Youtube.get("/search", {
@@ -33,12 +41,17 @@ const App = () => {
   };
   let content;
   if (searchType === "images") {
-    if (images.length === 0) {
-      content = <ErrMsg message={"No images Found!"} />;
+    if (!showErrMsg) {
+      if (!images.length) {
+        content = <Loader />;
+      } else {
+        content = <ImageList images={images} />;
+      }
     } else {
-      content = <ImageList images={images} />;
+      content = <ErrMsg message={"No images Found!"} />;
     }
   }
+
   if (searchType === "videos") {
     content = <VideoDisplay videos={videos} />;
   }

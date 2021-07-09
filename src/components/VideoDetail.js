@@ -1,9 +1,9 @@
 import React from "react";
+import Loader from "./Loader";
 
 const VideoDetail = ({ video }) => {
-//   console.log(video);
   if (!video) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   const youtubeSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
