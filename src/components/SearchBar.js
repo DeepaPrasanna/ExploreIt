@@ -24,7 +24,7 @@ const SearchBar = (props) => {
             className="ui grey button search-box-buttons"
             data-searchtype="images"
             onClick={(e) =>
-              setSearchType(e.target.getAttribute("data-searchtype"))
+              setSearchType(e.currentTarget.getAttribute("data-searchtype"))
             }
             style={{ marginLeft: "5px" }}
           >
@@ -34,7 +34,7 @@ const SearchBar = (props) => {
             className="ui red button search-box-buttons"
             data-searchtype="videos"
             onClick={(e) =>
-              setSearchType(e.target.getAttribute("data-searchtype"))
+              setSearchType(e.currentTarget.getAttribute("data-searchtype"))
             }
           >
             Videos
